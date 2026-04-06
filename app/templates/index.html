@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-Commerce Store</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .product { border: 1px solid #ddd; margin: 10px; padding: 10px; border-radius: 5px; }
+        .product h3 { margin: 0; color: #333; }
+        .price { color: #e44d26; font-size: 1.2em; font-weight: bold; }
+        button { background: #4CAF50; color: white; padding: 10px; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Simple E-Commerce</h1>
+    <div id="products">
+        {% for product in products %}
+        <div class="product">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+            <p class="price">${{ product.price }}</p>
+            <p>Stock: {{ product.stock }}</p>
+            <button onclick="buy({{ product.id }})">Buy Now</button>
+        </div>
+        {% endfor %}
+    </div>
+    <script>
+        function buy(productId) {
+            alert('Product ' + productId + ' added to cart!');
+        }
+    </script>
+</body>
+</html>
