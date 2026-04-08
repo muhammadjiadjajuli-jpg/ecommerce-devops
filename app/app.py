@@ -56,9 +56,9 @@ if __name__ == '__main__':
         db.create_all()
         if Product.query.count() == 0:
             sample = [
-                Product(name='Laptop', price=999.99, stock=10, description='High performance laptop'),
-                Product(name='Mouse', price=29.99, stock=50, description='Wireless mouse'),
-                Product(name='Keyboard', price=79.99, stock=30, description='Mechanical keyboard')
+                Product(name='Laptop Gaming', price=999.99, stock=10, description='High performance laptop for gaming'),
+                Product(name='Mouse ROG', price=29.99, stock=50, description='Wireless mouse'),
+                Product(name='Keyboard RNB', price=79.99, stock=30, description='Mechanical keyboard')
             ]
             for p in sample:
                 db.session.add(p)
